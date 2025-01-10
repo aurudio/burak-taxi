@@ -8,7 +8,7 @@ import Navbar from './components/Navbar'
 
 function App() {
 	return (
-		<div className='font-semibold'>
+		<div className='font-semibold relative overflow-hidden'>
 			<Navbar />
 			<MainSection />
 			<AdvantagesSection />

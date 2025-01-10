@@ -52,14 +52,16 @@ const Navbar = () => {
 			</nav>
 			<div
 				className={`${
-					burger
-						? 'h-80'
-						: 'h-0 -top-60 -z-10 opacity-0 select-none cursor-default'
-				} absolute flex flex-col p-5 gap-7 items-center w-52 duration-300 bg-block right-10 top-24 rounded-br-lg rounded-bl-lg overflow-hidden shadow-md shadow-black`}
+					burger ? ' right-0' : '-right-60'
+				} flex top-24 flex-col p-5 gap-7 items-center w-52 duration-300 bg-block fixed rounded--lg rounded-bl-lg overflow-hidden shadow-md shadow-black min-2sm:hidden`}
 			>
 				<ul className='flex flex-col gap-10 items-center'>
 					{navList.map((item, key) => (
-						<li className=' cursor-pointer' key={key}>
+						<li
+							className=' cursor-pointer'
+							key={key}
+							onClick={() => setBurger(false)}
+						>
 							<a
 								className='first-letter:uppercase hover:text-black hover:bg-yellow-500 rounded-lg px-7 py-2 duration-150 text-white'
 								href={`#${item.anchor}`}
