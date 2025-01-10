@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+	font-family: 'Ubuntu', serif;
+	scroll-behavior: smooth;
+}
+
+@layer base {
+	.container {
+		@apply max-w-[1440px];
+	}
+}
+
+.my-button {
+	@apply bg-yellow-500 rounded-lg px-7 py-2;
+}
+
+.woman {
+	background: url('https://firebasestorage.googleapis.com/v0/b/nft-profect.appspot.com/o/woman_in_taxi.jpg?alt=media&token=1c4061b7-81da-4845-b5ea-13bd4066cdb2');
+	display: block;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.burak-text {
+	font-family: 'Lalezar', serif;
+}
+
+.my-input {
+	@apply rounded-2xl bg-gray-300 px-3 py-2 placeholder:text-gray-500;
+}
+
+input {
+	outline: none;
+}
+
+button {
+	outline: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	/* display: none; <- Crashes Chrome on hover */
+	-webkit-appearance: none;
+	margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+qwerty {
+	background-color: #191918dc;
+}
+
+.conditions > * {
+	@apply duration-300;
+}
