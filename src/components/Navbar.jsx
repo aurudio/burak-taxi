@@ -52,7 +52,9 @@ const Navbar = () => {
 			</nav>
 			<div
 				className={`${
-					burger ? 'h-80' : 'h-0 -top-6 -z-10'
+					burger
+						? 'h-80'
+						: 'h-0 -top-60 -z-10 opacity-0 select-none cursor-default'
 				} absolute flex flex-col p-5 gap-7 items-center w-52 duration-300 bg-block right-10 top-24 rounded-br-lg rounded-bl-lg overflow-hidden shadow-md shadow-black`}
 			>
 				<ul className='flex flex-col gap-10 items-center'>
