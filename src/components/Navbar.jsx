@@ -24,9 +24,9 @@ const Navbar = () => {
 
 	return (
 		<>
-			<nav className='flex justify-between sm:p-5 px-11 bg-[#191918dc] backdrop-blur-xl items-center py-3 fixed w-full top-0 z-10'>
+			<nav className='flex justify-between sm:p-3 px-11 bg-[#191918dc] backdrop-blur-xl items-center py-3 fixed w-full top-0 z-10'>
 				<div className=''>
-					<img src='Burak-logo.png' alt='' className='w-24' />
+					<img src='Burak-logo.png' alt='' className='min-2sm:w-24 w-20' />
 				</div>
 				<ul className='flex gap-10 sm:hidden'>
 					{navList.map((item, key) => (
@@ -53,7 +53,7 @@ const Navbar = () => {
 			<div
 				className={`${
 					burger ? ' right-0' : '-right-60'
-				} flex top-24 flex-col p-5 gap-7 items-center w-52 duration-300 bg-block fixed rounded--lg rounded-bl-lg overflow-hidden shadow-md shadow-black min-2sm:hidden`}
+				} flex top-[4.4rem] flex-col p-5 gap-7 items-center w-52 duration-300 bg-block fixed rounded--lg rounded-bl-lg overflow-hidden shadow-md shadow-black min-2sm:hidden`}
 			>
 				<ul className='flex flex-col gap-10 items-center'>
 					{navList.map((item, key) => (
