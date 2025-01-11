@@ -12,7 +12,7 @@ const Footer = () => {
 			</div>
 			<div className='flex gap-1'>
 				<p>© Burak Taxi, 2024 — {currentYear}</p>
-				<a href='#'>
+				<a href='#top'>
 					<button className='bg-yellow sm:p-1 rounded-lg p-2'>
 						<img src='/up_arrow.svg' alt='' className='w-7 sm:w-6' />
 					</button>

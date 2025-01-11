@@ -34,7 +34,14 @@ const ContactSection = () => {
 			return alert('Заполните ваш телефон')
 		}
 
-		handleSubmit({ ...driver, tel: phone })
+		const formatTel = phone.replace(/[\s()-]/g, '')
+
+		handleSubmit({ ...driver, tel: `+7${formatTel}` })
+		setDriver({
+			name: '',
+			tel: '',
+			desc: '',
+		})
 	}
 
 	return (
@@ -54,12 +61,16 @@ const ContactSection = () => {
 						value={driver.name}
 						onChange={(e) => setDriver({ ...driver, name: e.target.value })}
 					/>
-					<div className='flex rounded-2xl items-center 3sm:w-full w-1/2 bg-gray-300 px-3 py-2'>
-						<p>+7 </p>
+					<div
+						className={`flex rounded-2xl items-center 3sm:w-full w-1/2 bg-gray-300 px-3 py-2 ${
+							phone.length ? 'pl-4' : ''
+						}`}
+					>
+						<p className={`${phone.length ? '' : 'hidden'}`}>+7 </p>
 						<input
 							className='border-0 ml-1 w-full bg-transparent placeholder:text-gray-500'
 							type='text'
-							placeholder='(999) 999-99-99'
+							placeholder='+7 (999) 999-99-99'
 							value={phone}
 							maxLength={15}
 							onChange={handleChange}
@@ -72,6 +83,7 @@ const ContactSection = () => {
 						id=''
 						placeholder='Что хотите сказать?'
 						className='my-input min-2sm:w-2/3 w-full h-36 outline-none'
+						value={driver.desc}
 						onChange={(e) => setDriver({ ...driver, desc: e.target.value })}
 					></textarea>
 				</div>
