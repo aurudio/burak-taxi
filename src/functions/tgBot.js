@@ -10,7 +10,7 @@ export const handleSubmit = async (obj) => {
 		телефон ${obj.tel}
 		обращение ${obj.desc}`
 	try {
-		await axios.post(`https://api.telegram.org/bot${botToken}/senMessage`, {
+		await axios.post(`https://api.telegram.org/bot${botToken}/sendMessage`, {
 			chat_id: chatId,
 			text: message,
 		})
