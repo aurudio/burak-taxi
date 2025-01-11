@@ -42,6 +42,7 @@ const ContactSection = () => {
 			tel: '',
 			desc: '',
 		})
+		setPhone('')
 	}
 
 	return (
