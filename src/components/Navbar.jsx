@@ -2,10 +2,6 @@ import React, { useState } from 'react'
 
 const navList = [
 	{
-		value: 'услуги',
-		anchor: 'services',
-	},
-	{
 		value: 'преимущества',
 		anchor: 'advantages',
 	},
@@ -32,7 +28,7 @@ const Navbar = () => {
 					{navList.map((item, key) => (
 						<li className=' cursor-pointer text-whit' key={key}>
 							<a
-								className='first-letter:uppercase hover:text-yellow-500 duration-150 text-white'
+								className='first-letter:uppercase hover:text-yellow duration-150 text-white'
 								href={`#${item.anchor}`}
 							>
 								{item.value}
@@ -41,12 +37,14 @@ const Navbar = () => {
 					))}
 				</ul>
 				<div className='sm:hidden'>
-					<button className='my-button'>Позвонить</button>
+					<a className='p-0' href='tel:+79150198680'>
+						<button className='my-button'>Позвонить </button>
+					</a>
 				</div>
 				<img
 					src='/menu.svg'
 					alt=''
-					className='w-8 bg-yellow-500 p-1 rounded-lg sm:block hidden cursor-pointer'
+					className='w-8 bg-yellow p-1 rounded-lg sm:block hidden cursor-pointer'
 					onClick={() => setBurger(!burger)}
 				/>
 			</nav>
@@ -63,7 +61,7 @@ const Navbar = () => {
 							onClick={() => setBurger(false)}
 						>
 							<a
-								className='first-letter:uppercase hover:text-black hover:bg-yellow-500 rounded-lg px-7 py-2 duration-150 text-white'
+								className='first-letter:uppercase hover:text-black hover:bg-yellow rounded-lg px-7 py-2 duration-150 text-white'
 								href={`#${item.anchor}`}
 							>
 								{item.value}
@@ -71,7 +69,11 @@ const Navbar = () => {
 						</li>
 					))}
 				</ul>
-				<button className='my-button'>Позвонить</button>
+				<a className='p-0' href='tel:+79150198680'>
+					<button onClick={() => setBurger(!burger)} className='my-button'>
+						Позвонить
+					</button>
+				</a>
 			</div>
 		</>
 	)

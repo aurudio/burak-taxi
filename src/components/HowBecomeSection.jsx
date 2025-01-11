@@ -19,7 +19,7 @@ const proccess = [
 
 const HowBecomeSection = () => {
 	return (
-		<section className='px-6 flex flex-col gap-10 mt-40 items-center'>
+		<section className='px-6 flex flex-col min-2sm:gap-10 gap-6 min-2sm:mt-20 mt-8 items-center'>
 			<h2 className='min-2sm:text-4xl text-2xl min-2sm:w-3/4 text-center'>
 				Как стать водителем{' '}
 				<span className='burak-text font-medium'>Burak taxi</span>?
@@ -42,6 +42,12 @@ const HowBecomeSection = () => {
 					</div>
 				))}
 			</div>
+			<p
+				id='contacts'
+				className='text-transparent text-[1px] select-none cursor-default'
+			>
+				contacts
+			</p>
 		</section>
 	)
 }

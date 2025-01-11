@@ -1,17 +1,16 @@
 import React, { useState } from 'react'
+import { handleSubmit } from '../functions/tgBot'
 
 const ContactSection = () => {
 	const [phone, setPhone] = useState('')
-
-	// function inputValue(phoneNumber) {
-	// 	if (phoneNumber.length >= 1) {
-	// 		setPhone(`(${phoneNumber}`)
-	// 		console.log(Number(`(${phoneNumber}`))
-	// 	}
-	// }
+	const [driver, setDriver] = useState({
+		name: '',
+		tel: '',
+		desc: '',
+	})
 
 	const handleChange = (event) => {
-		const input = event.target.value.replace(/\D/g, '') // Удаляем все нецифровые символы
+		const input = event.target.value.replace(/\D/g, '')
 		const formattedPhone = formatPhoneNumber(input)
 		setPhone(formattedPhone)
 	}
@@ -26,8 +25,20 @@ const ContactSection = () => {
 		}${line1 ? `-${line1}` : ''}${line2 ? `-${line2}` : ''}`.trim()
 	}
 
+	function handleSend() {
+		if (!driver.name.trim() || !phone.trim()) {
+			return alert('Вы не заполнили нужные поля')
+		}
+
+		if (phone.length !== 15) {
+			return alert('Заполните ваш телефон')
+		}
+
+		handleSubmit({ ...driver, tel: phone })
+	}
+
 	return (
-		<section className='px-6 flex flex-col gap-10 mt-40 items-center'>
+		<section className='px-6 flex flex-col min-2sm:gap-10 gap-6 min-2sm:mt-20 mt-8 items-center'>
 			<h2 className='min-2sm:text-4xl text-3xl min-2sm:w-3/4 text-center'>
 				Начните зарабатывать уже сегодня!
 			</h2>
@@ -40,6 +51,8 @@ const ContactSection = () => {
 						className='my-input 3sm:w-full w-1/2'
 						type='text'
 						placeholder='Как ваз зовут?'
+						value={driver.name}
+						onChange={(e) => setDriver({ ...driver, name: e.target.value })}
 					/>
 					<div className='flex rounded-2xl items-center 3sm:w-full w-1/2 bg-gray-300 px-3 py-2'>
 						<p>+7 </p>
@@ -59,9 +72,12 @@ const ContactSection = () => {
 						id=''
 						placeholder='Что хотите сказать?'
 						className='my-input min-2sm:w-2/3 w-full h-36 outline-none'
+						onChange={(e) => setDriver({ ...driver, desc: e.target.value })}
 					></textarea>
 				</div>
-				<button className='my-button mt-6'>Стать водителем</button>
+				<button onClick={handleSend} className='my-button mt-6'>
+					Стать водителем
+				</button>
 			</div>
 		</section>
 	)

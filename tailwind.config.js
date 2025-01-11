@@ -6,6 +6,7 @@ module.exports = {
 			colors: {
 				main: '#302F2D',
 				block: '#191918',
+				yellow: '#FCE000',
 			},
 		},
 		screens: {

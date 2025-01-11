@@ -19,7 +19,7 @@ const advantages = [
 ]
 const AdvantagesSection = () => {
 	return (
-		<section className='px-6 flex flex-col gap-10 mt-20 items-center'>
+		<section className='px-6 flex flex-col min-2sm:gap-10 gap-6 min-2sm:mt-20 mt-8 items-center'>
 			<h2 className='min-2sm:text-4xl text-3xl min-2sm:w-3/4 text-center'>
 				Почему стоит выбрать {''}
 				<span className='burak-text font-medium'>Burak taxi</span>?
@@ -31,7 +31,6 @@ const AdvantagesSection = () => {
 			<div className='flex flex-wrap w-full min-2sm:w-4/5 mt-7 gap-y-8'>
 				{advantages.map((item, key) => (
 					<div
-						id='contacts'
 						className='flex items-start 3sm:w-3/4 m-auto w-1/2 gap-5'
 						key={key}
 					>
@@ -44,7 +43,7 @@ const AdvantagesSection = () => {
 				))}
 			</div>
 			<p
-				className='text-transparent select-none cursor-default'
+				className='text-transparent text-[1px] select-none cursor-default'
 				id='conditions'
 			>
 				conditions

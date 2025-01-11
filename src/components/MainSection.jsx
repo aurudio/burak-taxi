@@ -2,7 +2,7 @@ import React from 'react'
 
 const MainSection = () => {
 	return (
-		<section className='px-6 flex flex-col gap-16 mt-44 items-center'>
+		<section className='px-6 flex flex-col min-2sm:gap-16 gap-6 min-2sm:mt-44 mt-8 items-center'>
 			<div className='w-full flex flex-col items-center gap-16'>
 				<h1 className='min-2sm:text-5xl text-4xl min-2sm:w-3/4 text-center'>
 					Присоединяйтесь к {''}
@@ -13,7 +13,9 @@ const MainSection = () => {
 					Самые приятные условия и низкая комиссия по городу. Быстрое
 					подключение водителей и поддержка с документами.
 				</p>
-				<button className='my-button'>Узнать больше</button>
+				<button className='my-button'>
+					<a href='#contacts'>Узнать больше</a>
+				</button>
 			</div>
 			<div className='woman min-2sm:w-11/12 w-full 3sm:h-96 h-[40rem] rounded-xl'></div>
 			<p

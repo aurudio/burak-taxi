@@ -22,7 +22,7 @@ const Conditions = () => {
 	const [view, setView] = useState(false)
 
 	return (
-		<section className='px-6 flex flex-col gap-10 mt-40 items-center'>
+		<section className='px-6 flex flex-col min-2sm:gap-10 gap-6 min-2sm:mt-20 mt-8 items-center'>
 			<h2 className='min-2sm:text-4xl text-3xl min-2sm:w-3/4 text-center'>
 				Условия <span className='burak-text font-medium'>Burak taxi</span>?
 			</h2>
@@ -35,7 +35,7 @@ const Conditions = () => {
 				{conditions.map((item, key) => (
 					<div
 						key={key}
-						className='flex border-b cursor-default px-3 py-3 border-black items-end hover:border-yellow-500 hover:border-b-2 duration-15 hover:rounded-lg justify-between mb-px hover:mb-0 hover:bg-gray-300'
+						className='flex border-b cursor-default px-3 py-3 border-black items-end hover:border-yellow hover:border-b-2 duration-15 hover:rounded-lg justify-between mb-px hover:mb-0 hover:bg-gray-300'
 					>
 						<div className='flex flex-col gap-5'>
 							<p className='font-normal text-xs'>{item.desc}</p>
@@ -53,7 +53,7 @@ const Conditions = () => {
 						className={`flex p-3 border-black items-end  duration-150 justify-between cursor-default ${
 							view
 								? 'rounded-tl-lg rounded-tr-lg bg-gray-300'
-								: 'hover:border-yellow-500 border-b hover:rounded-lg hover:border-b-2 hover:bg-gray-300 mb-px hover:mb-0'
+								: 'hover:border-yellow border-b hover:rounded-lg hover:border-b-2 hover:bg-gray-300 mb-px hover:mb-0'
 						}`}
 					>
 						<div className='flex flex-col gap-5'>

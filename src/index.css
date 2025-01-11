@@ -14,7 +14,7 @@
 }
 
 .my-button {
-	@apply bg-yellow-500 rounded-lg px-7 py-2;
+	@apply bg-yellow rounded-lg px-7 py-2;
 }
 
 .woman {
