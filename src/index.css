@@ -18,7 +18,7 @@
 }
 
 .woman {
-	background: url('https://firebasestorage.googleapis.com/v0/b/nft-profect.appspot.com/o/woman_in_taxi.jpg?alt=media&token=1c4061b7-81da-4845-b5ea-13bd4066cdb2');
+	background: url('../public/woman_in_taxi.jpg');
 	display: block;
 	background-repeat: no-repeat;
 	background-size: cover;
